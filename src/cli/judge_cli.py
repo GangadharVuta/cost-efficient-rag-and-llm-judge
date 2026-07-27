@@ -35,17 +35,20 @@ def main():
         results = []
         for case in suite:
             if args.mode == "pointwise":
+                model_out = case.get("model_output", case.get("output_a", ""))
                 res = evaluator.evaluate_pointwise(
                     input_prompt=case["input"],
-                    model_output=case["model_output"],
+                    model_output=model_out,
                     expected_output=case.get("expected_output"),
                     context=case.get("context")
                 )
             else:
+                out_a = case.get("output_a", case.get("model_output", ""))
+                out_b = case.get("output_b", "Alternative answer output.")
                 res = evaluator.evaluate_pairwise(
                     input_prompt=case["input"],
-                    output_a=case["output_a"],
-                    output_b=case["output_b"],
+                    output_a=out_a,
+                    output_b=out_b,
                     context=case.get("context")
                 )
             results.append({"id": case.get("id"), "verdict": res})
