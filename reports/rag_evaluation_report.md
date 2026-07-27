@@ -8,16 +8,16 @@ This report presents empirical evaluation results for **Problem 1 (Cost-Efficien
 
 | Metric | LanceDB (Primary) | SQLite-vec (Secondary) | Target Standard |
 | :--- | :--- | :--- | :--- |
-| **Hit Rate / Recall@4** | **75.0%** | 75.0% | ≥ 90% |
-| **Mean Reciprocal Rank (MRR)** | **0.4458** | 0.4458 | ≥ 0.85 |
-| **nDCG@4** | **0.5239** | 0.5239 | ≥ 0.85 |
-| **Context Precision** | **0.2625** | 0.2625 | ≥ 0.80 |
+| **Hit Rate / Recall@4** | **70.0%** | 70.0% | ≥ 90% |
+| **Mean Reciprocal Rank (MRR)** | **0.4917** | 0.4917 | ≥ 0.85 |
+| **nDCG@4** | **0.5446** | 0.5446 | ≥ 0.85 |
+| **Context Precision** | **0.25** | 0.25 | ≥ 0.80 |
 | **Faithfulness / Groundedness** | **1.0** | 1.0 | ≥ 0.90 |
 | **Answer Relevance** | **1.0** | 1.0 | ≥ 0.90 |
-| **Exact Match (EM)** | **0.0** | 0.0 | N/A |
-| **Token F1 Score** | **0.3344** | 0.3344 | ≥ 0.65 |
-| **p50 Retrieval Latency** | **0.49 ms** | 4.29 ms | < 15 ms |
-| **p95 Retrieval Latency** | **2.09 ms** | 7.79 ms | < 30 ms |
+| **Exact Match (EM)** | **0.1** | 0.1 | N/A |
+| **Token F1 Score** | **0.4025** | 0.4025 | ≥ 0.65 |
+| **p50 Retrieval Latency** | **11.05 ms** | 5.32 ms | < 15 ms |
+| **p95 Retrieval Latency** | **12.46 ms** | 6.85 ms | < 30 ms |
 
 ---
 
