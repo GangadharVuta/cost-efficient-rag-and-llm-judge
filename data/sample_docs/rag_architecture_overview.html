@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>RAG System Evaluation and Metrics Overview</title></head>
+<body>
+<h1>Evaluation Architecture for Modern RAG Systems</h1>
+<p>Evaluating RAG pipelines requires separate metrics for retrieval accuracy, answer quality, and latency telemetry.</p>
+
+<h2>Retrieval Metrics</h2>
+<p>Retrieval evaluation relies on information retrieval (IR) metrics calculated across a test set of questions:</p>
+<ul>
+  <li><strong>Recall@k / Hit Rate:</strong> The proportion of test queries where at least one ground-truth relevant chunk is retrieved within top-k results.</li>
+  <li><strong>Mean Reciprocal Rank (MRR):</strong> Measures the reciprocal rank of the first relevant chunk retrieved across all queries.</li>
+  <li><strong>Normalized Discounted Cumulative Gain (nDCG@k):</strong> Evaluates position-weighted relevance quality of top-k retrieved chunks.</li>
+  <li><strong>Context Precision:</strong> The ratio of relevant chunks retrieved to the total number of chunks returned in top-k.</li>
+</ul>
+
+<h2>Answer Quality Metrics</h2>
+<p>Answer generation is evaluated along two primary dimensions: Faithfulness (groundedness in retrieved text) and Answer Relevance (directness in answering the user prompt). Exact Match (EM) and token F1 scores compare generated answers against gold human reference answers.</p>
+
+<h2>Latency and Cost Metrics</h2>
+<p>System performance is benchmarked using p50 (median) and p95 (95th percentile) retrieval latency. Telemetry tracks prompt tokens, completion tokens, total token count, and vector store execution time per query.</p>
+</body>
+</html>

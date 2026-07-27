@@ -1,0 +1,162 @@
+[
+  {
+    "id": "q01",
+    "question": "What primary factor drives the cost of fully managed vector databases?",
+    "gold_answer": "Managed vector database costs are primarily driven by always-on compute pods and index memory allocation regardless of query volume.",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 0,
+    "keywords": ["managed", "always-on", "pods", "memory"]
+  },
+  {
+    "id": "q02",
+    "question": "How do embedded vector stores like LanceDB reduce infrastructure costs?",
+    "gold_answer": "Embedded stores operate in-process without requiring background server pods, reducing cost strictly to disk/object storage costs ($0.02/GB/month).",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 1,
+    "keywords": ["embedded", "in-process", "disk", "storage"]
+  },
+  {
+    "id": "q03",
+    "question": "How does the RAG pipeline handle queries when retrieved similarity is below threshold?",
+    "gold_answer": "If similarity falls below the relevance threshold, the pipeline returns a deterministic 'no relevant context' message to prevent hallucination.",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 2,
+    "keywords": ["threshold", "no relevant context", "hallucination"]
+  },
+  {
+    "id": "q04",
+    "question": "How is chunk idempotency maintained during ingestion?",
+    "gold_answer": "Idempotency is maintained by generating a SHA-256 hash of the chunk content and doc ID so re-ingest does not create duplicate vectors.",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 3,
+    "keywords": ["idempotency", "sha-256", "hash", "duplicate"]
+  },
+  {
+    "id": "q05",
+    "question": "What does Recall@k measure in RAG retrieval evaluation?",
+    "gold_answer": "Recall@k measures the proportion of test queries where at least one ground-truth relevant chunk is retrieved within top-k results.",
+    "relevant_doc_id": "rag_architecture_overview",
+    "relevant_chunk_index": 1,
+    "keywords": ["recall", "proportion", "top-k", "relevant"]
+  },
+  {
+    "id": "q06",
+    "question": "What is Mean Reciprocal Rank (MRR)?",
+    "gold_answer": "MRR measures the reciprocal rank of the first relevant chunk retrieved across all queries.",
+    "relevant_doc_id": "rag_architecture_overview",
+    "relevant_chunk_index": 1,
+    "keywords": ["mrr", "reciprocal", "rank", "first"]
+  },
+  {
+    "id": "q07",
+    "question": "What does nDCG@k evaluate in vector retrieval?",
+    "gold_answer": "nDCG@k evaluates position-weighted relevance quality of top-k retrieved chunks.",
+    "relevant_doc_id": "rag_architecture_overview",
+    "relevant_chunk_index": 1,
+    "keywords": ["ndcg", "position-weighted", "relevance"]
+  },
+  {
+    "id": "q08",
+    "question": "What is Context Precision in RAG evaluation?",
+    "gold_answer": "Context Precision is the ratio of relevant chunks retrieved to the total number of chunks returned in top-k.",
+    "relevant_doc_id": "rag_architecture_overview",
+    "relevant_chunk_index": 1,
+    "keywords": ["context precision", "ratio", "relevant"]
+  },
+  {
+    "id": "q09",
+    "question": "What metrics assess answer quality against gold reference answers?",
+    "gold_answer": "Exact Match (EM) and token F1 scores compare generated answers against gold human reference answers.",
+    "relevant_doc_id": "rag_architecture_overview",
+    "relevant_chunk_index": 2,
+    "keywords": ["exact match", "f1", "gold"]
+  },
+  {
+    "id": "q10",
+    "question": "Which latency percentiles are tracked in RAG telemetry?",
+    "gold_answer": "System performance tracks p50 (median) and p95 (95th percentile) retrieval latency.",
+    "relevant_doc_id": "rag_architecture_overview",
+    "relevant_chunk_index": 3,
+    "keywords": ["p50", "p95", "latency", "telemetry"]
+  },
+  {
+    "id": "q11",
+    "question": "What storage format does LanceDB use on disk?",
+    "gold_answer": "LanceDB uses Parquet columnar disk format for vector embeddings and metadata.",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 1,
+    "keywords": ["parquet", "columnar", "lancedb"]
+  },
+  {
+    "id": "q12",
+    "question": "What default chunk size and overlap are used in ingestion?",
+    "gold_answer": "The default chunk size is 512 tokens with a 64 token overlap.",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 3,
+    "keywords": ["512", "64", "overlap", "chunk"]
+  },
+  {
+    "id": "q13",
+    "question": "What inline citation format must the RAG system use?",
+    "gold_answer": "The answer must include explicit inline citations referencing the document ID and chunk index like [Doc: id, Chunk: idx].",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 2,
+    "keywords": ["citations", "inline", "doc", "chunk"]
+  },
+  {
+    "id": "q14",
+    "question": "What is the cost per GB per month for object storage in embedded stores?",
+    "gold_answer": "Object storage cost is approximately $0.02 per GB per month.",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 1,
+    "keywords": ["$0.02", "gb", "month", "storage"]
+  },
+  {
+    "id": "q15",
+    "question": "What two dimensions evaluate answer generation quality?",
+    "gold_answer": "Answer generation is evaluated on Faithfulness (groundedness) and Answer Relevance.",
+    "relevant_doc_id": "rag_architecture_overview",
+    "relevant_chunk_index": 2,
+    "keywords": ["faithfulness", "relevance"]
+  },
+  {
+    "id": "q16",
+    "question": "What is quantum gravity entanglement in financial trading algorithms?",
+    "gold_answer": "I do not have sufficient relevant context in the provided documents to answer your question.",
+    "relevant_doc_id": null,
+    "relevant_chunk_index": null,
+    "keywords": ["no relevant context"]
+  },
+  {
+    "id": "q17",
+    "question": "What was the population of Paris in the year 1400 according to the document?",
+    "gold_answer": "I do not have sufficient relevant context in the provided documents to answer your question.",
+    "relevant_doc_id": null,
+    "relevant_chunk_index": null,
+    "keywords": ["no relevant context"]
+  },
+  {
+    "id": "q18",
+    "question": "How does Databricks Vector Search price its service?",
+    "gold_answer": "Managed databases incur continuous charges ranging from $70 to over $1,200 per month per pod cluster.",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 0,
+    "keywords": ["managed", "$70", "$1,200", "cluster"]
+  },
+  {
+    "id": "q19",
+    "question": "What telemetry attributes are recorded per RAG query?",
+    "gold_answer": "Telemetry tracks prompt tokens, completion tokens, total token count, and vector store execution time per query.",
+    "relevant_doc_id": "rag_architecture_overview",
+    "relevant_chunk_index": 3,
+    "keywords": ["telemetry", "prompt tokens", "completion tokens", "time"]
+  },
+  {
+    "id": "q20",
+    "question": "What similarity metric is used to retrieve top-k chunks?",
+    "gold_answer": "The system uses cosine similarity or distance thresholds to retrieve top-k chunks.",
+    "relevant_doc_id": "cloud_vector_db_guide",
+    "relevant_chunk_index": 2,
+    "keywords": ["cosine", "similarity", "distance"]
+  }
+]

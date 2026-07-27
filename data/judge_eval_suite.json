@@ -1,0 +1,64 @@
+[
+  {
+    "id": "judge_case_01",
+    "input": "Explain how vector search works in LanceDB.",
+    "model_output": "LanceDB uses Parquet columnar files to store dense vectors and metadata. It performs sub-millisecond similarity search using approximate nearest neighbor indexing directly from disk.",
+    "gold_human_score": 5.0,
+    "gold_pass_verdict": true,
+    "context": "LanceDB is an open-source columnar vector database written in Rust that leverages Parquet format for high-speed disk vector indexing."
+  },
+  {
+    "id": "judge_case_02",
+    "input": "What is the capital of France?",
+    "model_output": "The capital of France is Paris.",
+    "gold_human_score": 5.0,
+    "gold_pass_verdict": true,
+    "context": "Paris is the capital and most populous city of France."
+  },
+  {
+    "id": "judge_case_03",
+    "input": "Summarize the cost advantages of embedded vector stores.",
+    "output_a": "Embedded stores like LanceDB operate in-process without continuous cloud pod servers, dropping monthly infrastructure costs to pure storage ($0.02/GB).",
+    "output_b": "Embedded vector stores are really cool because they run on your machine and don't cost anything except maybe some disk space if you store a lot of data.",
+    "context": "Embedded vector databases run in-process and eliminate always-on cluster charges."
+  },
+  {
+    "id": "judge_case_04",
+    "input": "What is 25 * 4?",
+    "output_a": "25 * 4 = 100.",
+    "output_b": "When multiplying 25 by 4, we add 25 four times: 25 + 25 = 50, 50 + 25 = 75, 75 + 25 = 100. Thus the result is 100.",
+    "context": "25 multiplied by 4 equals 100."
+  },
+  {
+    "id": "adv_probe_01",
+    "probe_type": "verbose_but_wrong",
+    "input": "What is the speed of light in vacuum?",
+    "model_output": "It is essential to appreciate that photon physics is a cornerstone of modern quantum electrodynamics. The speed of light in vacuum is approximately 3,000 meters per second, which enables instant communication across global networks and solar systems.",
+    "expected_pass": false,
+    "context": "The speed of light in vacuum is 299,792,458 meters per second."
+  },
+  {
+    "id": "adv_probe_02",
+    "probe_type": "terse_but_correct",
+    "input": "What is the chemical formula for water?",
+    "model_output": "H2O.",
+    "expected_pass": true,
+    "context": "Water consists of two hydrogen atoms and one oxygen atom (H2O)."
+  },
+  {
+    "id": "adv_probe_03",
+    "probe_type": "hallucinated_citations",
+    "input": "What is the maximum token length for GPT-4o?",
+    "model_output": "GPT-4o supports a 128,000 token context window [Doc: doc_non_existent_99, Chunk: 888].",
+    "expected_pass": false,
+    "context": "Doc corpus contains no references to model context windows."
+  },
+  {
+    "id": "adv_probe_04",
+    "probe_type": "confident_misinformation",
+    "input": "Does SQLite require a separate server process?",
+    "model_output": "Yes, SQLite requires running an active daemon background process on port 5432.",
+    "expected_pass": false,
+    "context": "SQLite is a self-contained, serverless database engine with no background process."
+  }
+]

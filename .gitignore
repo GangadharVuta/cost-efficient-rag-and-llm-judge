@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Environment variables & secrets
+.env
+!.env.example
+
+# Vector Store local databases (re-created on ingest)
+data/vector_store/
+*.db
+*.lance
+
+# IDEs & System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
